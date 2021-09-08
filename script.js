@@ -1,26 +1,37 @@
-var x, y, v;
+var x, y, vx, vy x2, y2;
 
 function setup() {
 	createCanvas(500, 400);
 
   x= 0;
+  x2=50;
+  y2=50;
   y= 200;
-  v = 5;
+  vx = 8;
+  vy=5;
 }
 
-var [xpos, ypos, xspeed, yspeed] = [225, 225, 0, 0];
+
 
 function draw() {
 	background(225);
+  drawball()
 	
-	ellipse(x,y,50,50)
-  x=x+v;
+function drawball(){
+ellipse(x,y,80,80)
+  x=x+vx;
+  y=y+vy;
+
+    if (y<=0||y>=400){
+    vy=vy*-1;
+  }
 
 	
 
   if(x <= 0 || x>=500){
-    v=v*-1;
+    vx=vx*-1;
   }
 
-}
 
+}
+}
